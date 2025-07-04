@@ -1,6 +1,7 @@
 import pygame as pg
 import sys
 from random import randint
+import os  # Added for portable resource paths
 
 WIN_SIZE = 900
 CELL_SIZE = WIN_SIZE // 3
@@ -12,9 +13,16 @@ CELL_CENTER = vec2(CELL_SIZE / 2)
 class TicTacToe:
     def __init__(self, game):
         self.game = game
-        self.field_image = self.get_scaled_image(path='resources/field.png', res=[WIN_SIZE] * 2)
-        self.O_image = self.get_scaled_image(path='resources/o.png', res=[CELL_SIZE] * 2)
-        self.X_image = self.get_scaled_image(path='resources/x.png', res=[CELL_SIZE] * 2)
+        # Use a portable path to the resources folder
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        resources_dir = os.path.join(base_dir, '..', 'resources')
+        field_path = os.path.join(resources_dir, 'field.png')
+        o_path = os.path.join(resources_dir, 'o.png')
+        x_path = os.path.join(resources_dir, 'x.png')
+
+        self.field_image = self.get_scaled_image(path=field_path, res=[WIN_SIZE] * 2)
+        self.O_image = self.get_scaled_image(path=o_path, res=[CELL_SIZE] * 2)
+        self.X_image = self.get_scaled_image(path=x_path, res=[CELL_SIZE] * 2)
 
         self.game_array = [[INF, INF, INF],
                            [INF, INF, INF],
