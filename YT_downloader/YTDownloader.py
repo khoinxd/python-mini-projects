@@ -1,3 +1,11 @@
+# YouTube Downloader using pytube and customtkinter
+# -------------------------------------------------
+# To change the download location:
+# 1. Find the line: video.download()
+# 2. Change it to: video.download(output_path="your/custom/path")
+#    Example: video.download(output_path=r"C:\Users\YourName\Downloads")
+#    This will save the downloaded video to the specified folder.
+
 import tkinter
 import customtkinter
 from pytube import YouTube
@@ -10,7 +18,8 @@ def startDownload():
         
         title.configure(text=ytObject.title, text_color="white")
         finishLabel.configure(text="")
-        video.download()
+        video.download()  # <-- Change output location by adding output_path="your/custom/path" here
+        # Example: video.download(output_path=r"C:\Users\YourName\Downloads")
         finishLabel.configure(text="Downloaded")
     except:
         finishLabel.configure(text="Invalid Link", text_color="red")
