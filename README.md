@@ -19,7 +19,7 @@ Whether you're just getting started with Python or looking for new project ideas
 Each folder in this repo is a self-contained project. Some of the highlights:
 
 - 🧮 **Calculator** – A simple arithmetic calculator using Python
-- 🐍 **Snake Game** – Classic snake game built with `pygame`
+- ⚪ **Pong Game** – Classic snake game built with `pygame`
 - ❌⭕ **Tic Tac Toe** – Two-player terminal game with win-check logic
 - 📝 **Text Editor** – A basic notepad-like GUI app using `tkinter`
 
